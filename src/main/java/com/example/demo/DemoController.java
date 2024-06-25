@@ -11,4 +11,10 @@ public class DemoController {
     model.addAttribute("message", "Spring Bootの世界へようこそ！");
     return "welcome";
   }
+
+  // 参考用のページ
+  @GetMapping("/stock")
+  public String stock() {
+    return "stock";
+  }
 }

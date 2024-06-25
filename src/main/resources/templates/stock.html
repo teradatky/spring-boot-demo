@@ -1,0 +1,103 @@
+<!-- 参考用のページ -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品一覧</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">商品一覧</h1>
+
+      <!-- 検索フォームと追加ボタン -->
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="商品名で検索" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">検索</button>
+          </form>
+        </div>
+        <div class="col-md-6 text-end mt-3">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">商品を追加</button>
+        </div>
+      </div>
+
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>カテゴリー</th>
+            <th>価格</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>スマートフォン</td>
+            <td>電子機器</td>
+            <td>¥80,000</td>
+            <td><button class="btn btn-danger btn-sm">削除</button></td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>ノートパソコン</td>
+            <td>電子機器</td>
+            <td>¥120,000</td>
+            <td><button class="btn btn-danger btn-sm">削除</button></td>
+          </tr>
+          <tr>
+            <td>003</td>
+            <td>コーヒーメーカー</td>
+            <td>家電</td>
+            <td>¥15,000</td>
+            <td><button class="btn btn-danger btn-sm">削除</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 商品追加モーダル -->
+    <div
+      class="modal fade"
+      id="addProductModal"
+      tabindex="-1"
+      aria-labelledby="addProductModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addProductModalLabel">商品を追加</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="productName" class="form-label">商品名</label>
+                <input type="text" class="form-control" id="productName" required />
+              </div>
+              <div class="mb-3">
+                <label for="productCategory" class="form-label">カテゴリー</label>
+                <input type="text" class="form-control" id="productCategory" required />
+              </div>
+              <div class="mb-3">
+                <label for="productPrice" class="form-label">価格</label>
+                <input type="number" class="form-control" id="productPrice" required />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+            <button type="button" class="btn btn-primary">追加</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
